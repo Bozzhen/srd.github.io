@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Rot13</title>
+</head>
+<body class="center">
+    <header class="header">
+        <div class="together">
+            <div class="rot">Rot13</div>
+            <div class="user">
+                <div class="user-admin">User</div>
+                <img src="./assets/all/user.png" alt="user" class="img-user">
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="line"></div>
+        <img src="./assets/all/1.jpg" alt="" class="background">
+        <div class="user-content hidden">
+            <div class="green">Welcome User</div>
+            <div class="code">
+                <code><pre>
+                    function encodeToRot13(str) {
+                        const originalAlpha = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                        const cipher = 'nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM';
+                        return str.replace(/[A-Za-z0-9]/g, (letter) => cipher[originalAlpha.indexOf(letter)]);
+                      }
+                </pre></code>
+            </div>
+        </div>
+        <div class="admin-content hidden">
+            <div class="white">
+                <div class="topic">Welcome administrator</div>
+                <ul class="ul">
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+    <div class="pop-up">
+        <div class="pop-up-content">
+            <div class="login">Log in</div>
+            <form class="form-login" id="form">
+                <label class="name" for="name">Name</label>
+                <input type="text" class="user-name int" name="user-email" id="name" tabindex="1" pattern="[A-za-z0-9]{3,30}" required>
+                <label class="surname" for="surname">Surname</label>
+                <input type="text" class="user-surname int" name="user-email" id="surname" tabindex="2" pattern="[A-za-z0-9]{3,30}" required>
+                <label class="password" for="password" >Password</label>
+                <input type="password" class="user-password int" name="user-password" id="password" minlength="8" pattern="[A-Za-z0-9]{8,20}" tabindex="3" required>
+                <input type="checkbox" class="check">
+                <button class="button" type="submit">Log in</button>
+            </form>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
